@@ -26,6 +26,7 @@ function draw(){
     
      if (energy < 0.5) {
      image(cover,0,0,windowWidth,windowHeight);
+       
      go = createButton("GO");
      go.position(width/7,(height/15)*14);
      go.touchStarted(start);
@@ -89,7 +90,6 @@ function draw(){
         dots[i].move();
         dots[i]. display();  
       }
-
 }
 
 function deviceShaken(){
