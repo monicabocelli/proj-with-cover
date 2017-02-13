@@ -4,10 +4,12 @@ var singleShake = 0;
 var finished = false;
 var maxEnergy= 1000; //max energy for eathquake
 
+var cover;
+
 var button1;
 var button2;
 var button3;
-var cover;
+
 var myImage;
 var myResults;
 
