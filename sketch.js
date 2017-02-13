@@ -2,12 +2,9 @@ var dots = [];
 var energy = 0; //starting value of energy
 var singleShake = 0;
 var maxEnergy= 1000; //max energy for eathquake
-
 var cover;
-
 var button1;
 var button2;
-
 var myImage1;
 var myImage2;
 
@@ -24,7 +21,7 @@ function draw(){
      background(204);
      angleMode(DEGREES);  
     
-    var magnitude = int(map(energy, 0, 1000, 0, 10)); 
+     var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
      if (energy < 0.5) {
      textSize(height/15);
