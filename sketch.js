@@ -31,7 +31,7 @@ function draw(){
      go.position(width/7,(height/15)*14);
      go.touchStarted(start);
          
-     } else if (energy > 0 && energy < maxEnergy){
+     } else if (energy > 0.5 && energy < maxEnergy){
         
      textSize(height/20);
      textAlign(CENTER);
@@ -72,7 +72,7 @@ function draw(){
     button2.position((width/7)*5, (height/15)*14);
     button2.touchStarted(clearEverything);   
         
-    } else if(energy > maxEnergy) {
+    } else if(energy >= maxEnergy) {
     textSize(height/20);
     textAlign(CENTER);
     textStyle(BOLD);
