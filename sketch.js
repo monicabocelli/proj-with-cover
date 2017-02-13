@@ -50,11 +50,11 @@ function draw(){
   }
  
     
-    /*
+    
      cover = createButton("GO");
      cover.position(width/7,(height/15)*14);
      cover.touchStarted(deviceShaken);    
-    */
+    
     var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
     if (energy > 0 && energy < maxEnergy){
