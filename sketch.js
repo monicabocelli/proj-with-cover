@@ -25,14 +25,12 @@ function draw(){
      var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
      if (energy < 0.5) {
-
      textSize(height/15);
      textAlign(CENTER);
      textStyle(BOLD);
      fill(0);
      noStroke();
      text("PROJECT", width/2,heigh/2-height/4);
-     
      textStyle(NORMAL);
      textSize(height/12);
      text("Shake your device", width/2,(height/15)*14);
@@ -100,8 +98,7 @@ function draw(){
 function deviceShaken(){
     
    singleShake = abs(accelerationX) + abs(accelerationY) + abs(accelerationZ);
-   energy += singleShake;
-    
+   energy += singleShake; 
    
     //create objects
     for (var i = 0; i < energy*100; i++){
