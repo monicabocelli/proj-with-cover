@@ -79,8 +79,6 @@ function draw(){
     text("10",width/2, height - height/6.7)
     energy = maxEnergy;
     background(204,0,0);
-   } else{
-     background(204);
    }
     
     //draw dots and given methods (actions)
