@@ -3,12 +3,6 @@ var energy = 0; //starting value of energy
 var singleShake = 0;
 var finished = false;
 var maxEnergy= 1000; //max energy for eathquake
-var cover;
-/*
-var button1;
-var button2;
-var button3;
-*/
 
 var myImage1;
 var myImage2;
@@ -25,32 +19,16 @@ function setup(){
 function draw(){
      background(204);
      angleMode(DEGREES);  
-    
+    if (dots.length ==0) {
      textSize(height/15);
      textAlign(CENTER);
      textStyle(BOLD);
      fill(0);
      noStroke();
      text("PROJECT", width/2,height/2);
-    
      text("GO", width/2,(height/15)*14);
-    
-  var w = height/10;
-  var h = height/10;
-  var x1 = width/2;
-  var y1 = (height/15)*14;
-  
-  //boundaries
-  var max_x = x1 + w;
-  var max_y = y1 + h;
-  
-  if(touchX > x1 && touchX < max_x && touchY > y1 && touchY < max_y) {
-    deviceShaken();
   }
-  
-     cover = createButton("GO");
-     cover.position(width/7,(height/15)*14);
-     cover.touchStarted(deviceShaken);    
+     
     
     var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
@@ -141,7 +119,34 @@ function deviceShaken(){
     
 }
 
+function touchStarted(){
+   var a = random(0,360);
+    var b = random(0,energy * 1.6);
+    var x = sin(a) * b; // mi dà un numero che va da -b a b
+    var y = cos(a) * b; // mi dà un numero che va da -b a b
+    var d = dist(width/2,height/2, width/2, height/2 + x/2);
+    
+    this.xdot = random(width/2 - d, width/2 + d); //according to ellipse area
+    this.ydot = random(height/2 - d, height/2 + d); //according to ellipse area
+    this.diameter = 6;
+    this.speed = 4; //according to magnitude
+        
 
+this.move = function(){
+    this.xdot += random(-this.speed,this.speed);
+    this.ydot += random(-this.speed,this.speed);
+ 
+}
+
+this.display = function(){
+    if(this.xdot > width/2 + d || this.xdot < width/2 - d || this.ydot > height/2 + d || this.ydot < height/2 - d){
+       this.xdot = random(width/2 - d, width/2 + d);
+       this.ydot = random(height/2 - d, height/2 + d); 
+       }
+    ellipse(this.xdot, this.ydot, this.diameter, this.diameter);
+};
+}
+/*    
 function QuakeDots(){ 
     var a = random(0,360);
     var b = random(0,energy * 1.6);
@@ -170,11 +175,15 @@ this.display = function(){
 };
  
 }
-    
+*/    
     
     // result buttons
  function results() {
-     image(myImage1,0,0,windowWidth,windowHeight);
+     if (magnitude <= 6){
+         image(myImage1,0,0,windowWidth,windowHeight);
+     } else {
+         image(myImage2,0,0,windowWidth,windowHeight);
+     }
   
  }
 
