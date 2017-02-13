@@ -117,7 +117,6 @@ function QuakeDots(){
     this.ydot = random(height/2 - d, height/2 + d); //according to ellipse area
     this.diameter = 6;
     this.speed = 4; //according to magnitude
-        
 
     this.move = function(){
     this.xdot += random(-this.speed,this.speed);
@@ -134,7 +133,6 @@ function QuakeDots(){
     };
  
 }
-   
     
     // result buttons
  function results() {
@@ -155,6 +153,7 @@ function windowResized(){
     resizeCanvas(windowWidth,windowHeight);
   }
 
+//??
  function touchMoved() {
      // do some stuff
       return false;
