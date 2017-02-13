@@ -5,11 +5,13 @@ var finished = false;
 var maxEnergy= 1000; //max energy for eathquake
 
 var cover;
+
 /*
 var button1;
 var button2;
 var button3;
 */
+
 var myImage1;
 var myImage2;
 
@@ -25,6 +27,16 @@ function setup(){
 function draw(){
      background(204);
      angleMode(DEGREES);  
+    
+     textSize(height/15);
+     textAlign(CENTER);
+     textStyle(BOLD);
+     fill(0);
+     noStroke();
+     text("PROJECT", width/2,height/2);
+    
+     text("GO", width/2,(height/15)*14);
+    
   var w = height/10;
   var h = height/10;
   var x = width/2;
