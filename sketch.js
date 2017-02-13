@@ -3,9 +3,7 @@ var energy = 0; //starting value of energy
 var singleShake = 0;
 var finished = false;
 var maxEnergy= 1000; //max energy for eathquake
-
 var cover;
-
 /*
 var button1;
 var button2;
@@ -163,8 +161,6 @@ function QuakeDots(){
     var x = sin(a) * b; // mi dà un numero che va da -b a b
     var y = cos(a) * b; // mi dà un numero che va da -b a b
     var d = dist(width/2,height/2, width/2, height/2 + x/2);
-    
-    //var d = dist(width/2,height/2,width/2+value,height/2);
     
     this.xdot = random(width/2 - d, width/2 + d); //according to ellipse area
     this.ydot = random(height/2 - d, height/2 + d); //according to ellipse area
