@@ -1,5 +1,4 @@
 var dots = [];
-
 var energy = 0; //starting value of energy
 var singleShake = 0;
 var maxEnergy= 1000; //max energy for eathquake
