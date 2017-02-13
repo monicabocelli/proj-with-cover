@@ -64,11 +64,7 @@ function draw(){
     textAlign(CENTER);
     textStyle(BOLD);
     text(magnitude,width/2, height - height/6.7);
-    
-/*
-        
-         //buttons  
-          
+           
     button1 = createButton("See results");
     button1.position(width/7,(height/15)*14);
     button1.touchStarted(results);
@@ -76,14 +72,15 @@ function draw(){
     button2 = createButton("Try again");
     button2.position((width/7)*5, (height/15)*14);
     button2.touchStarted(clearEverything);
-    
-   // button3 = createButton('imagens');
-   // button3.position(width/3,height/3);
-   // button3.touchStarted(imagens);    
+       
         
     } else if (energy > maxEnergy) {
-    //display things
-    background(0);
+    textSize(height/20);
+    textAlign(CENTER);
+    textStyle(BOLD);
+    text("10",width/2, height - height/6.7)
+    energy = maxEnergy;
+    background(204,0,0);
   } else {
     background(204);
   }
@@ -97,15 +94,13 @@ function draw(){
         dots[i]. display();
         
       }
-          
-
 
 }
 
 function deviceShaken(){
     
    singleShake = abs(accelerationX) + abs(accelerationY) + abs(accelerationZ);
-  energy += singleShake;
+   energy += singleShake;
   
   //  if (singleShake > 30){
    //energy += singleShake;
@@ -118,35 +113,7 @@ function deviceShaken(){
     } 
     
 }
-
-function touchStarted(){
-   var a = random(0,360);
-    var b = random(0,energy * 1.6);
-    var x = sin(a) * b; // mi dà un numero che va da -b a b
-    var y = cos(a) * b; // mi dà un numero che va da -b a b
-    var d = dist(width/2,height/2, width/2, height/2 + x/2);
     
-    this.xdot = random(width/2 - d, width/2 + d); //according to ellipse area
-    this.ydot = random(height/2 - d, height/2 + d); //according to ellipse area
-    this.diameter = 6;
-    this.speed = 4; //according to magnitude
-        
-
-this.move = function(){
-    this.xdot += random(-this.speed,this.speed);
-    this.ydot += random(-this.speed,this.speed);
- 
-}
-
-this.display = function(){
-    if(this.xdot > width/2 + d || this.xdot < width/2 - d || this.ydot > height/2 + d || this.ydot < height/2 - d){
-       this.xdot = random(width/2 - d, width/2 + d);
-       this.ydot = random(height/2 - d, height/2 + d); 
-       }
-    ellipse(this.xdot, this.ydot, this.diameter, this.diameter);
-};
-}
-/*    
 function QuakeDots(){ 
     var a = random(0,360);
     var b = random(0,energy * 1.6);
@@ -160,22 +127,22 @@ function QuakeDots(){
     this.speed = 4; //according to magnitude
         
 
-this.move = function(){
+    this.move = function(){
     this.xdot += random(-this.speed,this.speed);
     this.ydot += random(-this.speed,this.speed);
  
-}
+    }
 
-this.display = function(){
+    this.display = function(){
     if(this.xdot > width/2 + d || this.xdot < width/2 - d || this.ydot > height/2 + d || this.ydot < height/2 - d){
        this.xdot = random(width/2 - d, width/2 + d);
        this.ydot = random(height/2 - d, height/2 + d); 
        }
     ellipse(this.xdot, this.ydot, this.diameter, this.diameter);
-};
+    };
  
 }
-*/    
+   
     
     // result buttons
  function results() {
