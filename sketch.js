@@ -24,6 +24,8 @@ function draw(){
      background(204);
      angleMode(DEGREES);
     
+    image(myImage,0,0,windowWidth,windowHeight);
+    
      textSize(height/20);
      textAlign(CENTER);
      textStyle(BOLD);
@@ -33,7 +35,7 @@ function draw(){
     
      cover = createButton("GO");
      cover.position(width/7,(height/15)*14);
-     cover.touchStarted(deviceShaken);    
+     cover.mousePressed(deviceShaken);    
     
     var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
