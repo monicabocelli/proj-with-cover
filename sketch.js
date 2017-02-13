@@ -1,7 +1,7 @@
 var dots = [];
 var energy = 0; //starting value of energy
 var singleShake = 0;
-//var finished = false;
+
 var maxEnergy= 1000; //max energy for eathquake
 
 var myImage1;
@@ -19,7 +19,10 @@ function setup(){
 function draw(){
      background(204);
      angleMode(DEGREES);  
-    if (dots.length ==0) {
+    
+    var magnitude = int(map(energy, 0, 1000, 0, 10)); 
+    
+     if (energy = 0) {
      textSize(height/15);
      textAlign(CENTER);
      textStyle(BOLD);
@@ -27,12 +30,7 @@ function draw(){
      noStroke();
      text("PROJECT", width/2,height/2);
      text("GO", width/2,(height/15)*14);
-  }
-     
-    
-    var magnitude = int(map(energy, 0, 1000, 0, 10)); 
-    
-    if (energy > 0 && energy < maxEnergy){
+     } else if (energy > 0 && energy < maxEnergy){
         
      textSize(height/20);
      textAlign(CENTER);
@@ -81,11 +79,8 @@ function draw(){
     text("10",width/2, height - height/6.7)
     energy = maxEnergy;
     background(204,0,0);
-  } else {
-    background(204);
-  }
-    */  
-    } 
+   } 
+    
     //draw dots and given methods (actions)
       noStroke();
       fill(0);
