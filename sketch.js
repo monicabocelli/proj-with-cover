@@ -7,12 +7,12 @@ var maxEnergy= 1000; //max energy for eathquake
 var button1;
 var button2;
 
-//var cover;
+var cover;
 var myImage1;
 var myImage2;
 
 function preload() {
-   //cover = loadImage("images/Tavola disegno 18-50.jpg");
+    cover = loadImage("images/Tavola disegno 18-50.jpg");
     myImage1 = loadImage("images/prova1.png");
     myImage2 = loadImage("images/prova2.jpg");
 }
@@ -27,8 +27,7 @@ function draw(){
      var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
      if (energy < 0.5) {
-
- //    backgroundImage(cover,0,0,width,height);
+     backgroundImage(cover,0,0,width,height);
      textSize(height/15);
      textAlign(CENTER);
      textStyle(BOLD);
@@ -49,7 +48,7 @@ function draw(){
      noStroke();
      text("See your eathquake", width/2,height - height/1.1);
         
-        //CREATE THE ELLIPSE AREA
+     //CREATE THE ELLIPSE AREA
     var x = width/2;
     var y = height/2;
     var r = energy * 2; 
@@ -79,8 +78,7 @@ function draw(){
         
     button2 = createButton("Try again");
     button2.position((width/7)*5, (height/15)*14);
-    button2.touchStarted(clearEverything);
-       
+    button2.touchStarted(clearEverything);   
         
     } else if (energy > maxEnergy) {
     textSize(height/20);
@@ -96,8 +94,7 @@ function draw(){
       fill(0);
       for (var i = 0; i < energy * 100; i++){
         dots[i].move();
-        dots[i]. display();
-        
+        dots[i]. display();  
       }
 
 }
@@ -158,14 +155,13 @@ function QuakeDots(){
  function clearEverything() {
     background(204);
     energy = 0;
- 
  }
 
 function windowResized(){
     resizeCanvas(windowWidth,windowHeight);
-     }
+  }
 
  function touchMoved() {
      // do some stuff
       return false;
-}
+ }
