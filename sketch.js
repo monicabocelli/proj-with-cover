@@ -7,12 +7,12 @@ var maxEnergy= 1000; //max energy for eathquake
 var button1;
 var button2;
 
-var cover;
+//var cover;
 var myImage1;
 var myImage2;
 
 function preload() {
-   cover = loadImage("images/Tavola disegno 18-50.jpg");
+   //cover = loadImage("images/Tavola disegno 18-50.jpg");
     myImage1 = loadImage("images/prova1.png");
     myImage2 = loadImage("images/prova2.jpg");
 }
@@ -29,7 +29,7 @@ function draw(){
     
      if (energy < 0.5) {
 
-     backgroundImage(cover,0,0,width,height);
+ //    backgroundImage(cover,0,0,width,height);
      textSize(height/15);
      textAlign(CENTER);
      textStyle(BOLD);
