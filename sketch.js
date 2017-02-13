@@ -34,11 +34,10 @@ function draw(){
   var max_x = x + w;
   var max_y = y + h;
   
-  //control the color
   if(touchX > x && touchX < max_x && touchY > y && touchY < max_y) {
     deviceShaken();
   } else {
-    image(myImage1,0,0,windowWidth,windowHeight);
+   // image(myImage1,0,0,windowWidth,windowHeight);
     
      textSize(height/15);
      textAlign(CENTER);
@@ -49,8 +48,7 @@ function draw(){
     
      text("GO", width/2,(height/15)*14);
   }
-  
-  rect(x,y,w,h);
+ 
     
     /*
      cover = createButton("GO");
