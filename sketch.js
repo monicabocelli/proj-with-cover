@@ -10,9 +10,9 @@ var myImage1;
 var myImage2;
 
 function preload() {
+    cover = loadImage("images/Tavola disegno 18-50.jpg");
     myImage1 = loadImage("images/prova1.png");
     myImage2 = loadImage("images/prova2.jpg");
-    cover = loadImage("images/Tavola disegno 18-50.jpg");
 }
     
 function setup(){
