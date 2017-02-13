@@ -1,7 +1,6 @@
 var dots = [];
 var energy = 0; //starting value of energy
 var singleShake = 0;
-
 var maxEnergy= 1000; //max energy for eathquake
 
 var cover;
@@ -27,7 +26,7 @@ function draw(){
     
     var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
-     if (energy = 0) {
+     if (energy < 0.5) {
      textSize(height/15);
      textAlign(CENTER);
      textStyle(BOLD);
@@ -37,10 +36,10 @@ function draw(){
      text("PROJECT", width/2,height/2);
      
      cover = createButton("GO");
-     cover.position(width/7,(height/15)*14);
+     cover.position(width/2,(height/15)*14);
      cover.touchStarted(QuakeDots);   
          
-     //text("GO", width/2,(height/15)*14);
+     text("GO", width/2,(height/15)*14);
          
      } else if (energy > 0 && energy < maxEnergy){
         
