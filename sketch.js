@@ -37,14 +37,14 @@ function draw(){
     
   var w = height/10;
   var h = height/10;
-  var x = width/2;
-  var y = (height/15)*14;
+  var x1 = width/2;
+  var y1 = (height/15)*14;
   
   //boundaries
-  var max_x = x + w;
-  var max_y = y + h;
+  var max_x = x1 + w;
+  var max_y = y1 + h;
   
-  if(touchX > x && touchX < max_x && touchY > y && touchY < max_y) {
+  if(touchX > x1 && touchX < max_x && touchY > y1 && touchY < max_y) {
     deviceShaken();
   } else {
    // image(myImage1,0,0,windowWidth,windowHeight);
@@ -123,7 +123,7 @@ function draw(){
     background(204);
   }
     */  
-   
+    } 
     //draw dots and given methods (actions)
       noStroke();
       fill(0);
@@ -148,7 +148,7 @@ function deviceShaken(){
     
    
     //create objects
-    for (var i = 0; i < value*100; i++){
+    for (var i = 0; i < energy*100; i++){
         dots.push(new QuakeDots());
     } 
     
