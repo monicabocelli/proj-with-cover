@@ -4,12 +4,15 @@ var singleShake = 0;
 var maxEnergy= 1000; //max energy for eathquake
 var button1;
 var button2;
+var cover;
+var go;
 var myImage1;
 var myImage2;
 
 function preload() {
     myImage1 = loadImage("images/prova1.png");
     myImage2 = loadImage("images/prova2.jpg");
+    cover = loadImage("images/Tavola disegno 18-50.jpg");
 }
     
 function setup(){
@@ -22,15 +25,10 @@ function draw(){
      var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
      if (energy < 0.5) {
-     textSize(height/15);
-     textAlign(CENTER);
-     textStyle(BOLD);
-     fill(0);
-     noStroke();
-     text("PROJECT", width/2,heigh/2);
-     textStyle(NORMAL);
-     textSize(height/12);
-     text("Shake your device", width/2,(height/15)*14);
+     image(cover,0,0,windowWidth,windowHeight);
+     go = createButton("GO");
+     go.position(width/7,(height/15)*14);
+     go.touchStarted(start);
          
      } else if (energy > 0 && energy < maxEnergy){
         
@@ -133,7 +131,16 @@ function QuakeDots(){
     };
  
 }
-    
+
+function start(){
+     background(204);
+     textSize(height/20);
+     textAlign(CENTER);
+     textStyle(BOLD);
+     fill(0);
+     noStroke();
+     text("SHAKE YOUR DEVICE", width/2,height - height/1.1);
+}
     // result buttons
  function results() {
      if (magnitude <= 6){
