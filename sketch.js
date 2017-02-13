@@ -7,6 +7,7 @@ var maxEnergy= 1000; //max energy for eathquake
 var button1;
 var button2;
 var button3;
+var cover;
 var myImage;
 var myResults;
 
@@ -29,11 +30,22 @@ function draw(){
      textStyle(BOLD);
      fill(0);
      noStroke();
-     text("SHAKE YOUR DEVICE", width/2,height - height/1.1);    
+     text("PROJECT", width/2,height - height/1.1);
+    
+     cover = createButton("GO");
+     cover.position(width/7,(height/15)*14);
+     cover.touchStarted(deviceShaken);    
     
     var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
     if (energy > 0 && energy < maxEnergy){
+        
+     textSize(height/20);
+     textAlign(CENTER);
+     textStyle(BOLD);
+     fill(0);
+     noStroke();
+     text("SHAKE YOUR DEVICE", width/2,height - height/1.1);
         
         //CREATE THE ELLIPSE AREA
     var x = width/2;
