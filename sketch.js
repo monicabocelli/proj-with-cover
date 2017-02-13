@@ -26,18 +26,18 @@ function draw(){
      background(204);
      angleMode(DEGREES);
     
-    image(myImage,0,0,windowWidth,windowHeight);
+   // image(myImage,0,0,windowWidth,windowHeight);
     
-     textSize(height/20);
+     textSize(height/15);
      textAlign(CENTER);
      textStyle(BOLD);
      fill(0);
      noStroke();
-     text("PROJECT", width/2,height - height/1.1);
+     text("PROJECT", width/2,height/2);
     
      cover = createButton("GO");
      cover.position(width/7,(height/15)*14);
-     cover.mousePressed(deviceShaken);    
+     cover.touchStarted(deviceShaken);    
     
     var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
