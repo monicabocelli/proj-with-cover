@@ -2,15 +2,12 @@ var dots = [];
 var energy = 0; //starting value of energy
 var singleShake = 0;
 var maxEnergy= 1000; //max energy for eathquake
-
 var button1;
 var button2;
-
 var myImage1;
 var myImage2;
 
 function preload() {
-   
     myImage1 = loadImage("images/prova1.png");
     myImage2 = loadImage("images/prova2.jpg");
 }
@@ -30,7 +27,7 @@ function draw(){
      textStyle(BOLD);
      fill(0);
      noStroke();
-     text("PROJECT", width/2,heigh/2-height/4);
+     text("PROJECT", width/2,heigh/2);
      textStyle(NORMAL);
      textSize(height/12);
      text("Shake your device", width/2,(height/15)*14);
@@ -42,7 +39,7 @@ function draw(){
      textStyle(BOLD);
      fill(0);
      noStroke();
-     text("See your eathquake", width/2,height - height/1.1);
+     text("EARTHQUAKE INTENSITY", width/2,height - height/1.1);
         
      //CREATE THE ELLIPSE AREA
     var x = width/2;
@@ -76,14 +73,16 @@ function draw(){
     button2.position((width/7)*5, (height/15)*14);
     button2.touchStarted(clearEverything);   
         
-    } else if (energy > maxEnergy) {
+    } else if(energy > maxEnergy) {
     textSize(height/20);
     textAlign(CENTER);
     textStyle(BOLD);
     text("10",width/2, height - height/6.7)
     energy = maxEnergy;
     background(204,0,0);
-   } 
+   } else{
+     background(204);
+   }
     
     //draw dots and given methods (actions)
       noStroke();
