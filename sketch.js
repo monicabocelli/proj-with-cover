@@ -46,21 +46,8 @@ function draw(){
   
   if(touchX > x1 && touchX < max_x && touchY > y1 && touchY < max_y) {
     deviceShaken();
-  } else {
-   // image(myImage1,0,0,windowWidth,windowHeight);
-    
-     textSize(height/15);
-     textAlign(CENTER);
-     textStyle(BOLD);
-     fill(0);
-     noStroke();
-     text("PROJECT", width/2,height/2);
-    
-     text("GO", width/2,(height/15)*14);
   }
- 
-    
-    
+  
      cover = createButton("GO");
      cover.position(width/7,(height/15)*14);
      cover.touchStarted(deviceShaken);    
