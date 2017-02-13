@@ -10,12 +10,12 @@ var button1;
 var button2;
 var button3;
 
-var myImage;
-var myResults;
+var myImage1;
+var myImage2;
 
 function preload() {
-    myResult = loadImage("images/prova1.png");
-    myImage = loadImage("images/prova2.jpg");
+    myImage1 = loadImage("images/prova1.png");
+    myImage2 = loadImage("images/prova2.jpg");
 }
     
 function setup(){
@@ -26,7 +26,7 @@ function draw(){
      background(204);
      angleMode(DEGREES);
     
-   // image(myImage,0,0,windowWidth,windowHeight);
+   // image(myImage1,0,0,windowWidth,windowHeight);
     
      textSize(height/15);
      textAlign(CENTER);
