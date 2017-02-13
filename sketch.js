@@ -12,7 +12,7 @@ var myImage1;
 var myImage2;
 
 function preload() {
-    cover = loadImage("images/Tavola disegno 18-50.jpg");
+   cover = loadImage("images/Tavola disegno 18-50.jpg");
     myImage1 = loadImage("images/prova1.png");
     myImage2 = loadImage("images/prova2.jpg");
 }
@@ -28,8 +28,8 @@ function draw(){
      var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
      if (energy < 0.5) {
-         
-     image(cover,0,0,windowWidth,windowHeight);
+
+     backgroundImage(cover,0,0,width,height);
      textSize(height/15);
      textAlign(CENTER);
      textStyle(BOLD);
@@ -107,10 +107,6 @@ function deviceShaken(){
     
    singleShake = abs(accelerationX) + abs(accelerationY) + abs(accelerationZ);
    energy += singleShake;
-  
-  //  if (singleShake > 30){
-   //energy += singleShake;
-  //} else { finished == true;}
     
    
     //create objects
