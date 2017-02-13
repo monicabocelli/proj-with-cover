@@ -1,7 +1,7 @@
 var dots = [];
 var energy = 0; //starting value of energy
 var singleShake = 0;
-var finished = false;
+//var finished = false;
 var maxEnergy= 1000; //max energy for eathquake
 
 var myImage1;
