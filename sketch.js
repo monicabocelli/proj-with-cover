@@ -5,11 +5,11 @@ var finished = false;
 var maxEnergy= 1000; //max energy for eathquake
 
 var cover;
-
+/*
 var button1;
 var button2;
 var button3;
-
+*/
 var myImage1;
 var myImage2;
 
@@ -24,9 +24,21 @@ function setup(){
 
 function draw(){
      background(204);
-     angleMode(DEGREES);
-    
-   // image(myImage1,0,0,windowWidth,windowHeight);
+     angleMode(DEGREES);  
+  var w = height/10;
+  var h = height/10;
+  var x = width/2;
+  var y = (height/15)*14;
+  
+  //boundaries
+  var max_x = x + w;
+  var max_y = y + h;
+  
+  //control the color
+  if(touchX > x && touchX < max_x && touchY > y && touchY < max_y) {
+    deviceShaken();
+  } else {
+    image(myImage1,0,0,windowWidth,windowHeight);
     
      textSize(height/15);
      textAlign(CENTER);
@@ -35,10 +47,16 @@ function draw(){
      noStroke();
      text("PROJECT", width/2,height/2);
     
+     text("GO", width/2,(height/15)*14);
+  }
+  
+  rect(x,y,w,h);
+    
+    /*
      cover = createButton("GO");
      cover.position(width/7,(height/15)*14);
      cover.touchStarted(deviceShaken);    
-    
+    */
     var magnitude = int(map(energy, 0, 1000, 0, 10)); 
     
     if (energy > 0 && energy < maxEnergy){
@@ -74,10 +92,7 @@ function draw(){
     textStyle(BOLD);
     text(magnitude,width/2, height - height/6.7);
     
-   // textSize(height/50);
-   // textAlign(CENTER);
-   // textStyle(NORMAL);    
-   // text(energy, width/2, height - height/8);
+/*
         
          //buttons  
           
@@ -99,7 +114,7 @@ function draw(){
   } else {
     background(204);
   }
-      
+    */  
    
     //draw dots and given methods (actions)
       noStroke();
@@ -166,7 +181,7 @@ this.display = function(){
     
     // result buttons
  function results() {
-     image(myImage,0,0,windowWidth,windowHeight);
+     image(myImage1,0,0,windowWidth,windowHeight);
   
  }
 
