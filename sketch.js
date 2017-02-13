@@ -4,6 +4,11 @@ var singleShake = 0;
 
 var maxEnergy= 1000; //max energy for eathquake
 
+var cover;
+
+var button1;
+var button2;
+
 var myImage1;
 var myImage2;
 
@@ -28,8 +33,15 @@ function draw(){
      textStyle(BOLD);
      fill(0);
      noStroke();
+         
      text("PROJECT", width/2,height/2);
-     text("GO", width/2,(height/15)*14);
+     
+     cover = createButton("GO");
+     cover.position(width/7,(height/15)*14);
+     cover.touchStarted(QuakeDots);   
+         
+     //text("GO", width/2,(height/15)*14);
+         
      } else if (energy > 0 && energy < maxEnergy){
         
      textSize(height/20);
